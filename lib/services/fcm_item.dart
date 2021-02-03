@@ -24,7 +24,7 @@ class Item {
       routeName,
       () => MaterialPageRoute<void>(
         settings: RouteSettings(name: routeName),
-        builder: (BuildContext context) => HomePage(itemId),
+        builder: (BuildContext context) => HomePage(itemId: itemId),
       ),
     );
   }
