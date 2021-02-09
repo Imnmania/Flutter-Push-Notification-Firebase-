@@ -2,14 +2,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_push_notification_firebase/services/fcm_item.dart';
 
-final Map<String, Item> _items = <String, Item>{};
-Item _itemForMessage(Map<String, dynamic> message) {
-  final dynamic data = message['data'] ?? message;
-  final String itemId = data['id'];
-  final Item item = _items.putIfAbsent(itemId, () => Item(itemId: itemId))
-    ..status = data['status'];
-  return item;
-}
+// final Map<String, Item> _items = <String, Item>{};
+// Item _itemForMessage(Map<String, dynamic> message) {
+//   final dynamic data = message['data'] ?? message;
+//   final String itemId = data['id'];
+//   final Item item = _items.putIfAbsent(itemId, () => Item(itemId: itemId))
+//     ..status = data['status'];
+//   return item;
+// }
 
 class HomePage extends StatefulWidget {
   final String itemId;
@@ -27,6 +27,15 @@ class _HomePageState extends State<HomePage> {
 
   String _homeScreenText = "Waiting for token...";
   // bool _topicButtonsDisabled = false;
+
+  final Map<String, Item> _items = <String, Item>{};
+  Item _itemForMessage(Map<String, dynamic> message) {
+    final dynamic data = message['data'] ?? message;
+    final String itemId = data['id'];
+    final Item item = _items.putIfAbsent(itemId, () => Item(itemId: itemId))
+      ..status = data['status'];
+    return item;
+  }
 
   Widget _buildDialog(BuildContext context, Item item) {
     return AlertDialog(

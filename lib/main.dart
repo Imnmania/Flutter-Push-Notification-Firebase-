@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Push Notification',
       home: HomePage(
-        itemId: '123',
+        itemId: '1',
       ),
     );
   }
