@@ -6,6 +6,6 @@
 <img src="https://i.imgur.com/qSmUiHS.png" alt="Screenshot">
 </p>
 
-#### Dependencies
+#### Dependencies:
 * firebase_core: 
 * firebase_messaging: ^7.0.3
